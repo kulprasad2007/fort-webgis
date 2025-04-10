@@ -132,7 +132,7 @@ var fort = L.geoJSON
   
 
   credits = L.controlCredits({
-    imageurl: 'images/logo_map.png',
+    imageurl: './images/logo_map.png',
     imagealt: 'credits',
     tooltip: 'Made by Prasad Kulkarni',
     width: '50px',
