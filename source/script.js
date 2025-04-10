@@ -66,7 +66,7 @@ baselayers = {
 };
 var control_layers = L.control.layers(baselayers, overlays).addTo(map);
 
-var india_map = L.geoJSON.ajax("data/india_map.geojson", {
+var india_map = L.geoJSON.ajax("./data/india_map.geojson", {
   style: function (feature) {
     return {
       color: "#ced4da",
@@ -78,7 +78,7 @@ var india_map = L.geoJSON.ajax("data/india_map.geojson", {
 }).addTo(map);
 
 
-var maha_map = L.geoJSON.ajax("data/maha_map.geojson", {
+var maha_map = L.geoJSON.ajax("./data/maha_map.geojson", {
   style: function (feature) {
     return {
       color: "orange",
@@ -94,14 +94,14 @@ var maha_map = L.geoJSON.ajax("data/maha_map.geojson", {
 
 // Add custom icon for forts
 var fortIcon = L.icon({
-  iconUrl: "images/fort.png", // Ensure the correct path to your custom icon
+  iconUrl: "./images/fort.png", // Ensure the correct path to your custom icon
   iconSize: [30, 50], // Size of the icon
   iconAnchor: [15, 30], // Anchor point of the icon
   popupAnchor: [0, -30], // Popup position relative to the icon
 });
 
 var fort = L.geoJSON
-  .ajax("data/fort.geojson", {
+  .ajax("./data/fort.geojson", {
     pointToLayer: function (feature,latlng) {
       return style_fort(feature,latlng);
     },
