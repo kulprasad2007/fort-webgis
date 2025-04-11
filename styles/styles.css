@@ -28,3 +28,21 @@
           width: 200px;
           height: 100px;
         }
+
+        /* Style for the fort label container */
+        .fort-label-container {
+          background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+          border: 1px solid #ccc; /* Light gray border */
+          border-radius: 4px; /* Rounded corners */
+          padding: 2px 5px; /* Padding around the text */
+          pointer-events: none; /* Prevent interaction with the label */
+          text-align: center; /* Center the text */
+        }
+
+        /* Style for the fort label text */
+        .fort-label {
+          font-size: 12px; /* Adjust font size */
+          font-weight: bold; /* Bold text */
+          color: #333; /* Dark gray text color */
+          text-shadow: 1px 1px 2px white; /* Add a shadow for better visibility */
+        }
