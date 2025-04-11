@@ -138,6 +138,25 @@ var fort = L.geoJSON
     expandcontent: 'Interactive Map<br/>by <a href="https://www.prasadkulkarni.in/" target="_blank">Prasad Kulkarni</a>'
   }).addTo(map);
 
+// Create a separate layer for the labels
+var labelLayer = L.geoJSON.ajax("./data/fort.geojson", {
+  pointToLayer: function (feature, latlng) {
+    if (feature.properties && feature.properties.name) {
+      return L.marker(latlng, {
+        icon: L.divIcon({
+          className: "fort-label-container", // Custom class for the label container
+          html: `<div class="fort-label">${feature.properties.name}</div>`,
+          iconSize: [100, 20], // Adjust the size to fit the label
+          iconAnchor: [50, -20], // Center the label above the point
+        }),
+      });
+    }
+  },
+}).addTo(map);
+
+// Add the label layer to the layer control
+control_layers.addOverlay(labelLayer, "Fort Labels");
+
 
 
 
